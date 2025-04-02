@@ -1,7 +1,7 @@
 package project.taskManager;
 
 import project.domains.Task;
-import project.repositories.TaskPrinterInterface;
+import project.repositories.TasksPrinterInterface;
 import project.services.TaskManager;
 import project.services.TaskPrinter;
 
@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TaskManager taskManager = new TaskManager();
-        TaskPrinterInterface taskPrinterInterface = new TaskPrinter();
+        TasksPrinterInterface taskPrinterInterface = new TaskPrinter();
 
         do {
             System.out.println("\n----- MENU DE TAREFAS -----");

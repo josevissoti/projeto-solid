@@ -3,6 +3,15 @@ package project.domains;
 import project.repositories.MarkTaskInterface;
 import project.repositories.PrintTaskInterface;
 
+/*
+    Single Responsibility Principle
+    - Classe possui uma responsabilidade única de representar a Entidade Task e seus métodos base
+
+    Open/Closed Principle
+    - Classe Entidade Task possui ambas as funcionalidades e características finalizadas
+    - Clase já utilizada por outras classes, como a TaskPrinter e Task Manager, podendo causar problemas de compatibilidade caso modificada
+    - Classe aberta para extensão caso tenha necessidade de novas funcionalidades específicas em classes distintas, evitando problemas no uso por outras Classes
+*/
 public class Task implements MarkTaskInterface, PrintTaskInterface {
     private String description;
     private String priority;
@@ -30,16 +39,27 @@ public class Task implements MarkTaskInterface, PrintTaskInterface {
         this.priority = priority;
     }
 
+    /*
+        Single Responsibility Principle
+        - Metodo com a responsabilidade unica de alterar o status dos objetos de Task
+
+        Interface Segregation Principle
+        - Implementação do metodo da interface MarkTaskInterface
+        - Sem necessidade de implementar métodos desnecessários
+    */
     @Override
     public void markTaskAsDone() {
         this.status = true;
     }
 
-    @Override
-    public boolean isDone() {
-        return this.status;
-    }
+    /*
+        Single Responsibility Principle
+        - Metodo com a responsabilidade unica de imprimir para o usuário os objetos de Task
 
+        Interface Segregation Principle
+        - Implementação do metodo da interface PrintTaskInterface
+        - Sem necessidade de implementar métodos desnecessários
+    */
     @Override
     public void print() {
         System.out.println("[" + (status ? "X" : " ") + "] " + description + " (Prioridade: " + priority + ")");
