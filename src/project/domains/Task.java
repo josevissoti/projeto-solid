@@ -46,6 +46,12 @@ public class Task implements MarkTaskInterface, PrintTaskInterface {
         Interface Segregation Principle
         - Implementação do metodo da interface MarkTaskInterface
         - Sem necessidade de implementar métodos desnecessários
+
+        Liskov Substitution Principle
+        - A Classe Task define um contrato com a MarkTaskInterface
+        - O metodo implementado segue as regras do princípio de Liskov
+        - Não possui pré ou poós condições adicionais
+        - Não quebra o código ao ser realizado a substituição
     */
     @Override
     public void markTaskAsDone() {
@@ -59,6 +65,12 @@ public class Task implements MarkTaskInterface, PrintTaskInterface {
         Interface Segregation Principle
         - Implementação do metodo da interface PrintTaskInterface
         - Sem necessidade de implementar métodos desnecessários
+
+        Liskov Substitution Principle
+        - A Classe Task define um contrato com a PrintTaskInterface
+        - O metodo implementado segue as regras do princípio de Liskov
+        - Não possui pré ou poós condições adicionais
+        - Não quebra o código ao ser realizado a substituição
     */
     @Override
     public void print() {
