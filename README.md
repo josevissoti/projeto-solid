@@ -33,4 +33,6 @@ O mesmo ocorre na Interface TasksPrinterInterface, apenas com o método <i>print
 
 ### Dependence Inversion Principle
 
+<p>Define que as Classes de alto nível, ou seja, Classes de regra de negócio complexas, não devem depender das Classes de baixo nível, representando Classes concretas, fazendo o uso da dependência de Interfaces para atender esse propósito. Assim, o acoplamento entre as Classes é reduzido, permitindo uma maior flexibilidade para possíveis modificações no projeto.</p>
 
+<p>Esse princípio é aplicado entre a Classe Main e a Classe TaskManager, onde, com a finalidade de inverter as dependências de ambas as classes, uma Interface é implementada como intermediaria entre elas, possibilitando o uso do polimorfismo para identificar a Classe que será utilizada. Assim, a classe Main não se rorna dependente da Classe TaskManager, porém ainda pode manter o uso das funcionalidades necessárias da mesma, sem que ocorra o risco de conflitos ocorrerem quando o codigo passar por possíveis modificações posteriores</p>
